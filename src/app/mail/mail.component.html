@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Recevez une copie de votre simulation par mail</h1>
+  <div>
+    <input
+      type="email"
+      placeholder="Votre email"
+      name="email"
+      class="email"
+      (keyup)="onKey($event)"
+    />
+    <button
+      mat-button
+      class="submit"
+      disabled="{{ disabled }}"
+      (click)="onSubmit()"
+    >
+      Envoyer
+    </button>
+  </div>
+</div>

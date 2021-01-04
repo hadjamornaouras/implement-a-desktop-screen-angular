@@ -1,0 +1,44 @@
+<div class="container">
+
+    <h1>Votre Bilan assurance</h1>
+    <div class="text">
+        <p>vous trouverez ci-dessous un récapitulatif de votre bilan .Pour savoir sur quels </p>
+        <p> critères notre évaluation c'est
+            porté , cliqué sur une des garanties </p>
+    </div>
+
+    <div class="content">
+        <mat-spinner *ngIf="loading"></mat-spinner>
+        <mat-card  *ngIf="!loading" calss="card-container">
+            <div class="card" *ngFor="let data of photos; let position = index">
+                <span class="title"> {{data.title}}</span>
+                <div class="right">
+                    <ul>
+                        <li *ngFor="let item of [].constructor(data.numberActiveSatrs); let i = index">
+                            <mat-icon aria-hidden="false" aria-label="Example star icon" class=" starts_number">star
+                            </mat-icon>
+                        </li>
+                        <li *ngFor="let item of [].constructor(data.numberStars); let i = index">
+                            <mat-icon aria-hidden="false" aria-label="Example star icon" class=" starts">star</mat-icon>
+                        </li>
+                    </ul>
+                    <span class="close" (click)="deletePhoto(data)">
+                        <mat-icon aria-hidden="false" aria-label="Example close icon" class="close-icon">close
+                        </mat-icon>
+                    </span>
+                </div>
+            </div>
+            <div class="message"  *ngIf="(!loading && photos.length == 0)">
+                <p>
+                    <span *ngIf="error"> an error occured, click retry to get the photos</span>
+                    <span *ngIf="!error"> there is Any Photos , click on the button below to get the items</span>
+                </p>
+                <button id="buttonRetry" mat-button class="submit" (click)="getPhotos()">
+                    <span *ngIf="error">Retry</span>
+                    <span *ngIf="!error"> Get Photos</span>
+                    
+                </button> 
+            </div>
+         </mat-card>
+    </div>
+</div>

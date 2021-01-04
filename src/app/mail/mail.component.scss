@@ -1,0 +1,39 @@
+.container{
+    padding-bottom: 2rem;
+    h1{
+        padding-top: 1rem !important;
+        display: flex;
+        padding: 0 16px;
+        flex-direction: column;
+        align-items: center;
+    }
+    div{
+        display: flex;
+        justify-content: center;
+        width: 450px;
+        margin: auto;
+        border: 2px solid rgba(0,0,0,.87);
+        height: 49px;
+        border-radius: 3px;
+        .email{
+            background-color: white;
+            width: 70%;
+            height: 100%;
+            font-size: 1.5rem;
+            padding: 0;
+            padding-left: 15px;
+            border: none;
+            border-radius: inherit;
+        }
+       button{
+            background-color: black;
+            color: white;
+            width: 30%;
+            height: 100%;
+            border-radius: initial;
+        }
+        button[disabled=true]{
+            background-color: lavender !important;
+        }
+    }
+}
